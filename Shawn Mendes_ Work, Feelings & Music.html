@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shawn Mendes: Work, Feelings & Music</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF5FB;--card:#FBFDFF;--ink:#1f3347;--soft:#506a80;--line:#C9DDEE;--a:#6FA3D6;--b:#A9CCEB;--c:#F7D98B;--d:#CFE6DD;--e:#F4C7B8;--hero:#DCEBF7;--hd:#2F6697;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg:#14202b;--card:#1d2d3b;--ink:#eaf3fb;--soft:#a9c0d3;--line:#2f4659;--hero:#1a2a38;--hd:#9fcbf0}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 .5em;color:var(--hd)}
+h2{font-size:clamp(1.8rem,5vw,2.5rem)}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--hero);border-bottom:2px solid var(--line);display:flex;gap:.25rem;overflow-x:auto;padding:.6rem 1rem}
+nav a{color:var(--ink);text-decoration:none;font-weight:800;font-size:.95rem;padding:.4rem .8rem;border-radius:99px;white-space:nowrap}
+nav a:hover{background:rgba(111,163,214,.28)}
+header{background:linear-gradient(180deg,var(--hero),var(--bg));padding:3.2rem 1.2rem 3.5rem;text-align:center}
+.moods{display:flex;justify-content:center;gap:.6rem;font-size:clamp(1.8rem,7vw,2.8rem);margin-bottom:1rem}
+.moods span{animation:bob 2.4s ease-in-out infinite}.moods span:nth-child(2n){animation-delay:.4s}.moods span:nth-child(3n){animation-delay:.8s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+header h1{font-size:clamp(2rem,6vw,3.3rem)}
+header p{max-width:34ch;margin:0 auto 1.4rem;font-size:1.25rem;color:var(--soft)}
+.btn{display:inline-block;background:var(--c);color:#2b2a1f;font-weight:800;border:0;border-radius:99px;padding:.75rem 1.6rem;font:800 1.05rem Nunito,sans-serif;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}.btn.alt{background:var(--a);color:#10263a}
+main{max-width:980px;margin:0 auto;padding:0 1.2rem}
+section{padding:3.2rem 0 1rem}
+.lead{color:var(--soft);max-width:62ch}
+.card{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:1.5rem}
+.read{display:grid;gap:1.4rem}
+@media(min-width:800px){.read{grid-template-columns:1.5fr 1fr}}
+.read p{margin:0 0 .9rem;max-width:60ch}
+.side{background:color-mix(in srgb,var(--b) 30%,var(--card));border-radius:16px;padding:1.1rem}
+.side h3{font-size:1.25rem}.side ul{margin:0;padding-left:1.2rem}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0 1.2rem;font-size:.95rem}
+.legend span{padding:.1rem .7rem;border-radius:99px}
+.hw,.hp,.hf{color:inherit;text-decoration:none;font-weight:800;border-radius:5px;padding:0 3px}
+.hw,.l-w{background:rgba(247,217,139,.75);color:#2b2a1f}
+.hp,.l-p{border-bottom:3px solid var(--a);background:rgba(111,163,214,.2)}
+.hf,.l-f{background:rgba(244,199,184,.7);color:#3a2418}
+.hf{cursor:pointer}.hf:hover{background:#f4b9a4}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.fact{background:var(--card);border:2px solid var(--line);border-top:8px solid var(--k);border-radius:18px;padding:1rem 1.2rem}
+.fact b{display:block;font:400 1.45rem 'DM Serif Display',serif;color:var(--hd)}
+.jobs{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.rule{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-bottom:1.2rem}
+.rule div{border-radius:16px;padding:1rem 1.2rem;font-weight:800;font-size:1.2rem;color:#2b2a1f}
+.rule small{display:block;font-weight:600;font-size:.95rem}
+.flip{perspective:800px;background:none;border:0;padding:0;height:185px;cursor:pointer;font:inherit;color:inherit;text-align:center}
+.flip>span{display:block;position:relative;height:100%;transform-style:preserve-3d;transition:transform .5s}
+.flip.on>span{transform:rotateY(180deg)}
+.flip i{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:18px;padding:.8rem;font-style:normal;border:2px solid var(--line);background:var(--card)}
+.flip i:first-child{font:400 1.5rem 'DM Serif Display',serif;color:var(--hd);border-bottom:8px solid var(--k)}
+.flip i:first-child em{font:400 2.4rem system-ui}
+.flip i:last-child{transform:rotateY(180deg);background:var(--k);color:#1f3347;font-size:1rem;line-height:1.4;border-color:transparent}
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:4px solid var(--b)}
+.tl li{position:relative;margin-bottom:1.1rem;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.7rem 1.1rem}
+.tl li:before{content:"";position:absolute;left:-2.15rem;top:1rem;width:16px;height:16px;border-radius:50%;background:var(--c);border:3px solid var(--a)}
+.tl b{font:400 1.3rem 'DM Serif Display',serif;color:var(--hd);margin-right:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 1rem}
+.chips span{background:var(--card);border:2px solid var(--line);border-radius:99px;padding:.15rem .8rem;font-weight:600}
+.chips span.ir{background:rgba(244,199,184,.6);border-color:transparent;color:#3a2418}
+.emo{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.emo button{font:inherit;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:.5rem .9rem;cursor:pointer;color:var(--ink);font-weight:800}
+.emo button span{display:block;font-size:1.8rem}
+.emo button.on,.emo button:hover{background:var(--c);border-color:var(--a);color:#2b2a1f}
+.res{margin-top:1rem;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:1rem;font:400 1.35rem 'DM Serif Display',serif;color:var(--hd);min-height:3.2em}
+.q{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:1.1rem 1.3rem;margin-bottom:.9rem}
+.q p{font:400 1.3rem 'DM Serif Display',serif;color:var(--hd);margin:0 0 .4rem}
+.q .starts{font:600 .98rem Nunito,sans-serif;color:var(--soft)}
+textarea,input,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:.6rem .8rem;margin-top:.5rem}
+.opts{display:grid;gap:.6rem;margin:1rem 0}
+.opts button{font:inherit;font-weight:600;text-align:left;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:14px;padding:.7rem 1rem;cursor:pointer}
+.opts button:hover:not(:disabled){border-color:var(--a)}
+.opts .ok{background:#D7EEDD;border-color:#7DB98D;color:#254a31}.opts .no{background:#F9D8D5;border-color:#d98b85;color:#5a2a28}
+.msg{min-height:1.6em;font-weight:800}
+.prog{height:10px;border-radius:9px;background:var(--line);overflow:hidden;margin-bottom:1rem}
+.prog div{height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--c));transition:width .4s}
+.quiz h3{font-size:1.4rem}
+.build label{display:block;margin-top:.9rem;font-weight:800}
+details{background:var(--card);border:2px dashed var(--line);border-radius:16px;padding:1rem 1.3rem;margin-top:1rem}
+summary{font-weight:800;cursor:pointer}
+footer{margin-top:4rem;border-top:2px solid var(--line);background:var(--hero);color:var(--soft);text-align:center;padding:2rem 1rem;font-size:.95rem}
+footer button{margin-top:.8rem}
+@media print{nav,.btn,footer button{display:none}}
+@media (prefers-reduced-motion:reduce){.moods span{animation:none}html{scroll-behavior:auto}.flip>span,.prog div{transition:none}}
+</style>
+</head>
+<body>
+<nav aria-label="Main"><a href="#read">Meet Shawn</a><a href="#jobs">Work</a><a href="#story">Past Story</a><a href="#feelings">Feelings</a><a href="#doyou">Questions</a><a href="#quiz">Quiz</a><a href="#me">My Turn</a><a href="#teacher">Teacher</a></nav>
+
+<header>
+<div class="moods" aria-hidden="true"><span>😊</span><span>🎸</span><span>😮</span><span>🎤</span><span>😌</span></div>
+<h1>Shawn Mendes: Work, Feelings &amp; Music</h1>
+<p>Read, speak and practice English with a Canadian singer.</p>
+<a class="btn" href="#read">Start reading</a>
+</header>
+
+<main>
+<section id="read">
+<h2>Meet Shawn</h2>
+<p class="lead">Read the text. Look at the colors. Tap the orange words to see them in the Feelings section.</p>
+<div class="legend"><span class="l-w">work as / work at</span><span class="l-p">past simple</span><span class="l-f">feelings</span></div>
+<div class="card read">
+<div>
+<p>Shawn Mendes is a singer. He is from Canada. He works as a singer and a songwriter.</p>
+<p>He works at concerts and at a music studio. He plays the guitar and the piano.</p>
+<p>He writes songs about love, life and feelings. Many fans love his music.</p>
+</div>
+<aside class="side"><h3>Look and think</h3><ul><li>Where is Shawn from?</li><li>What does he work as?</li><li>Where does he work?</li><li>Is he happy on stage?</li></ul></aside>
+</div>
+<div class="grid" style="margin-top:1rem">
+<div class="fact" style="--k:var(--c)"><b>🇨🇦 Canada</b>Shawn is from Ontario.</div>
+<div class="fact" style="--k:var(--a)"><b>🎂 Birthday</b>He was born on August 8, 1998.</div>
+<div class="fact" style="--k:var(--e)"><b>🎵 Songs</b>“Stitches” and “Señorita” are famous songs.</div>
+</div>
+</section>
+
+<section id="jobs">
+<h2>Work as / Work at</h2>
+<p class="lead">Two small words. Two different ideas. Tap a card to turn it.</p>
+<div class="rule">
+<div style="background:var(--c)">work <u>as</u> + job<small>Shawn works as a singer.</small></div>
+<div style="background:var(--b)">work <u>at</u> + place<small>A teacher works at a school.</small></div>
+</div>
+<div class="grid jobs" id="jobgrid"></div>
+</section>
+
+<section id="story">
+<h2>Shawn's Story (Past Simple)</h2>
+<p class="lead">Now read about the past. The blue words are past simple verbs.</p>
+<ul class="tl">
+<li><b>1998</b>Shawn was born in Canada.</li>
+<li><b>2013</b>He was a teenager. He learned the guitar and posted videos online.</li>
+<li><b>2014</b>A music company signed him. He started a new life as a singer.</li>
+<li><b>2015</b>He wrote many songs. His first album, <i>Handwritten</i>, came out.</li>
+<li><b>2016–2020</b>He sang at concerts around the world. He made more albums.</li>
+<li><b>2022</b>He felt tired and stressed. He stopped his tour and took a break.</li>
+<li><b>2024</b>He came back with a new album, <i>Shawn</i>.</li>
+</ul>
+<h3 style="margin-top:1.5rem">Past Simple helper</h3>
+<p class="lead" style="margin:0">Regular verbs: add <b>-ed</b>. Irregular verbs are different (orange).</p>
+<div class="chips">
+<span>play → played</span><span>live → lived</span><span>start → started</span><span>post → posted</span><span>listen → listened</span><span>dance → danced</span><span>stop → stopped</span><span>rest → rested</span>
+</div>
+<div class="chips">
+<span class="ir">am/is → was</span><span class="ir">are → were</span><span class="ir">write → wrote</span><span class="ir">sing → sang</span><span class="ir">take → took</span><span class="ir">feel → felt</span><span class="ir">make → made</span><span class="ir">come → came</span><span class="ir">have → had</span><span class="ir">go → went</span>
+</div>
+</section>
+
+<section id="feelings">
+<h2>Feelings &amp; Emotions</h2>
+<p class="lead">Tap a card. Read the example and the past sentence.</p>
+<div class="grid" id="fgrid"></div>
+<div class="card" style="margin-top:1.5rem">
+<h3>Shawn's feelings</h3>
+<p style="margin:0 0 .8rem">Many singers feel nervous before a concert. They also feel excited and happy on stage. Shawn felt tired and stressed in 2022. He rested and relaxed. Then he felt better.</p>
+<h3>How do you feel today?</h3>
+<div class="emo" id="emo"></div>
+<div class="res" id="fres" aria-live="polite">Choose a feeling 👆</div>
+</div>
+</section>
+
+<section id="doyou">
+<h2>Questions: Do you…? Did you…?</h2>
+<p class="lead">Answer with a full sentence. Start with <b>Yes, I do.</b> / <b>No, I don't.</b> / <b>Yes, I did.</b> / <b>No, I didn't.</b></p>
+<div id="qs"></div>
+</section>
+
+<section id="quiz">
+<h2>Quiz</h2>
+<div class="card quiz">
+<div class="prog"><div id="bar"></div></div>
+<h3 id="qt"></h3><div class="opts" id="opts"></div>
+<p class="msg" id="msg" aria-live="polite"></p>
+<button class="btn alt" id="next" hidden>Next question</button>
+</div>
+</section>
+
+<section id="me">
+<h2>My Turn</h2>
+<div class="card build">
+<p style="margin:0">Build your sentences. Then read them to your teacher.</p>
+<label for="p1">Who?</label>
+<select id="p1"><option value="I|work">I</option><option value="My mother|works">My mother</option><option value="My father|works">My father</option><option value="My friend|works">My friend</option></select>
+<label for="p2">…works as a… (job)</label><input id="p2" value="teacher">
+<label for="p3">…works at a… (place)</label><input id="p3" value="school">
+<label for="p4">I feel … when I listen to music.</label>
+<select id="p4"></select>
+<label for="p5">Yesterday I…</label>
+<select id="p5"><option>listened to music</option><option>sang a song</option><option>played the guitar</option><option>danced at home</option><option>watched a video</option></select>
+<div class="res" id="out" aria-live="polite"></div>
+</div>
+</section>
+
+<section id="teacher">
+<h2>Teacher's Corner</h2>
+<details><summary>How to use this page</summary><p>1. Read “Meet Shawn” aloud; ask the student to find the three colors. 2. In “Work”, turn the cards and make new sentences (<i>She works as… / She works at…</i>). 3. Read the timeline and ask the student to say the base form of each blue verb. 4. Use the Feelings cards for speaking: “How do you feel before a test?” 5. Finish with the questions, the quiz and “My Turn”.</p></details>
+<details><summary>Extra ideas</summary><p>Mime a feeling and let the student guess. Ask “Where do you work/study?” and “What does your mother work as?” Ask about yesterday: “How did you feel?” Practise the pronunciation of -ed endings: played /d/, started /id/, stopped /t/.</p></details>
+</section>
+</main>
+
+<footer><div>A fan-made English learning page. Not official. All texts are original.</div><button class="btn" id="theme">Light / Dark mode</button></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const K=['var(--a)','var(--c)','var(--e)','var(--d)','var(--b)'];
+function flips(el,items,pre){items.forEach((w,i)=>{const b=document.createElement('button');b.className='flip';b.id=pre+w[0];b.style.setProperty('--k',K[i%5]);
+b.setAttribute('aria-label','Card: '+w[0]);b.innerHTML='<span><i><em>'+w[1]+'</em>'+w[0]+'</i><i>'+w[2]+'</i></span>';
+b.onclick=()=>b.classList.toggle('on');el.appendChild(b)})}
+const jobs=[['teacher','👩‍🏫','works as a <b>teacher</b><br>works at a <b>school</b>'],['doctor','🩺','works as a <b>doctor</b><br>works at a <b>hospital</b>'],['chef','👨‍🍳','works as a <b>chef</b><br>works at a <b>restaurant</b>'],['pilot','✈️','works as a <b>pilot</b><br>works at an <b>airport</b>'],['cashier','🛒','works as a <b>cashier</b><br>works at a <b>supermarket</b>'],['vet','🐶','works as a <b>vet</b><br>works at an <b>animal clinic</b>'],['singer','🎤','works as a <b>singer</b><br>works at a <b>studio</b>'],['engineer','🛠️','works as an <b>engineer</b><br>works at a <b>factory</b>']];
+flips($('jobgrid'),jobs,'j-');
+const F=[['happy','😊','I feel happy when I sing.<br><small>Yesterday I felt happy.</small>'],['sad','😢','I feel sad in the rain.<br><small>Yesterday I was sad.</small>'],['angry','😠','He is angry. The Wi-Fi is slow.<br><small>He was angry.</small>'],['scared','😨','I am scared of spiders.<br><small>She was scared.</small>'],['nervous','😬','I feel nervous before a test.<br><small>I felt nervous.</small>'],['excited','🤩','I feel excited before a concert.<br><small>We felt excited.</small>'],['tired','😴','Shawn felt tired. He took a break.<br><small>I was tired.</small>'],['proud','🥹','I feel proud of my work.<br><small>I felt proud.</small>'],['surprised','😮','She feels surprised. A party!<br><small>She was surprised.</small>'],['bored','😒','I feel bored in a long class.<br><small>I was bored.</small>'],['stressed','😰','Too much work makes me stressed.<br><small>I felt stressed.</small>'],['relaxed','😌','I feel relaxed with music.<br><small>I felt relaxed.</small>']];
+flips($('fgrid'),F,'f-');
+F.forEach(f=>{const b=document.createElement('button');b.innerHTML='<span>'+f[1]+'</span>'+f[0];b.onclick=()=>{[...$('emo').children].forEach(x=>x.classList.remove('on'));b.classList.add('on');
+$('fres').innerHTML='I feel '+f[0]+' today. '+f[1]+'<br><small style="font:600 1rem Nunito,sans-serif;color:var(--soft)">Now say: “I feel '+f[0]+' when…”</small>'};$('emo').appendChild(b);
+const o=document.createElement('option');o.textContent=f[0];$('p4').appendChild(o)});
+
+const dq=[['Do you work or study?','I work as a… / I study at…'],['Where do you work or study?','I work at… / I study at…'],['Does your mother work at a hospital?','Yes, she does. / No, she doesn\'t. She works at…'],['Do you like Shawn Mendes?','Yes, I do. / No, I don\'t.'],['Do you feel happy when you listen to music?','Yes, I do. I feel happy when… / No, I don\'t.'],['Do you feel nervous before a test?','Yes, I do. / No, I don\'t. I feel…'],['Did you feel tired yesterday?','Yes, I did. / No, I didn\'t. I felt…'],['Did you listen to music yesterday?','Yes, I did. I listened to… / No, I didn\'t.'],['Did you play an instrument as a child?','Yes, I did. I played the… / No, I didn\'t.'],['How did you feel this morning?','I felt… because…']];
+dq.forEach(q=>{const d=document.createElement('div');d.className='q';d.innerHTML='<p>'+q[0]+'</p><p class="starts">Start like this: '+q[1]+'</p><textarea rows="2" aria-label="Your answer" placeholder="Write your answer here…"></textarea>';$('qs').appendChild(d)});
+
+const quiz=[['Shawn ___ a singer.',['works as','works at','work as'],0],['A teacher ___ a school.',['works as','works at','working at'],1],['My mother works ___ a nurse.',['as','at','in'],0],['A chef works ___ a restaurant.',['as','at','on'],1],['Past of “sing”:',['sang','singed','sung'],0],['Shawn ___ many songs.',['wrote','writed','write'],0],['Yesterday I ___ happy.',['am','was','is'],1],['Past of “feel”:',['feeled','felt','feel'],1],['You win a prize. You feel ___.',['excited','sad','angry'],0],['Shawn ___ a break in 2022.',['took','taked','take'],0]];
+let qi=0,score=0;
+function show(){const q=quiz[qi];$('qt').textContent=(qi+1)+'. '+q[0];$('msg').textContent='';$('next').hidden=true;$('bar').style.width=(qi/quiz.length*100)+'%';const o=$('opts');o.innerHTML='';
+q[1].forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{[...o.children].forEach((x,j)=>{x.disabled=true;if(j===q[2])x.classList.add('ok')});
+if(i===q[2]){score++;$('msg').textContent='✅ Correct! Great job!'}else{b.classList.add('no');$('msg').textContent='❌ Not this time. The green answer is correct.'}
+$('next').hidden=false;$('next').textContent=qi===quiz.length-1?'See my score':'Next question'};o.appendChild(b)})}
+$('next').onclick=()=>{qi++;if(qi<quiz.length){show()}else{$('bar').style.width='100%';$('qt').textContent='You scored '+score+' out of '+quiz.length+'!';$('opts').innerHTML='';$('msg').textContent=score>=8?'🌟 Amazing work!':'💪 Good try! Read again and play again.';$('next').textContent='Play again';$('next').onclick=()=>location.reload()}};
+show();
+
+function build(){const[p,v]=$('p1').value.split('|');const j=$('p2').value.trim()||'…',pl=$('p3').value.trim()||'…';
+$('out').innerHTML=p+' '+v+' as a '+j+'. '+p+' '+v+' at a '+pl+'.<br>I feel '+$('p4').value+' when I listen to music.<br>Yesterday I '+$('p5').value+'.'}
+['p1','p2','p3','p4','p5'].forEach(i=>$(i).addEventListener('input',build));build();
+
+$('theme').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+
+/* highlight: work as/at, past verbs, feelings */
+const PV=['was','were','learned','posted','signed','started','wrote','came','sang','made','felt','stopped','took','rested','played','listened'];
+const re=new RegExp('\\b(works? (?:as|at)|'+F.map(f=>f[0]).join('|')+'|'+PV.join('|')+')\\b','gi');
+const fw=F.map(f=>f[0]);
+document.querySelectorAll('.read p,.side li,.tl li,#feelings .card p,.q>p:first-child').forEach(el=>{el.innerHTML=el.innerHTML.replace(re,(m,w)=>{const l=w.toLowerCase();
+if(/^works? /.test(l))return '<span class="hw">'+m+'</span>';
+if(fw.includes(l))return '<a href="#feelings" class="hf" data-w="'+l+'">'+m+'</a>';
+return '<span class="hp">'+m+'</span>'})});
+document.addEventListener('click',e=>{const a=e.target.closest('.hf');if(!a)return;e.preventDefault();const c=$('f-'+a.dataset.w);if(!c)return;c.scrollIntoView({behavior:'smooth',block:'center'});c.classList.add('on');c.animate([{transform:'scale(1.07)'},{transform:'scale(1)'}],{duration:500})});
+</script>
+</body>
+</html>
